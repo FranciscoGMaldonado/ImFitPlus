@@ -33,6 +33,14 @@ class CalculoImcActivity : AppCompatActivity(){
         }
         binding.viewCategoria.text = categoria
 
+        val mensagem = when {
+            imc < 18.5 -> "Cuidado! Você está muito abaixo do peso."
+            imc < 25 -> "Muito Bem! Seu peso está normal."
+            imc < 30 -> "Atenção! Você está com sobrepeso."
+            else -> "Cuidado! Você está com obesidade."
+        }
+        binding.viewMensagem.text = mensagem
+
         binding.btnCalcularGasto.setOnClickListener {
             val intent = Intent(this, CalculoTmbActivity::class.java)
             intent.putExtra("sexo", sexo)

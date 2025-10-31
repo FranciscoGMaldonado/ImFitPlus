@@ -8,24 +8,24 @@
     tools:context=".CalculoImcActivity">
 
     <Button
-        android:id="@+id/btnCalcularGasto"
-        android:layout_width="150dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="44dp"
-        android:text="Calcular Gasto Calórico"
+        android:id="@+id/btnVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="192dp"
+        android:text="Voltar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/viewCategoria" />
 
     <Button
-        android:id="@+id/btnVoltar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
-        android:text="Voltar"
+        android:id="@+id/btnCalcularGasto"
+        android:layout_width="150dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="112dp"
+        android:text="Calcular Gasto Calórico"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/viewCategoria" />
 
@@ -43,10 +43,22 @@
         app:layout_constraintTop_toBottomOf="@id/viewNome" />
 
     <TextView
+        android:id="@+id/viewMensagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="mensagem"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewCategoria" />
+
+    <TextView
         android:id="@+id/viewCategoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="Categoria"
         android:textSize="18sp"
