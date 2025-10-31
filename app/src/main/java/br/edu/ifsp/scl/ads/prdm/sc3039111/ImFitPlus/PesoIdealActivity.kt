@@ -22,13 +22,12 @@ class PesoIdealActivity : AppCompatActivity(){
             peso - pesoIdeal
         }
 
-        binding.viewPesoIdeal.text = "$pesoIdeal"
-        binding.viewDiferenca.text = "A Diferença do Peso atual e do Ideal é de $diferenca Kg"
+        val diferencaFormat = String.format("%.2f", diferenca)
+        binding.viewPesoIdeal.text = "%.2f".format(pesoIdeal)
+        binding.viewDiferenca.text = "A Diferença do Peso atual e do Ideal é de $diferencaFormat Kg"
 
         binding.btnVoltar.setOnClickListener {
             finish()
         }
-
     }
-
 }

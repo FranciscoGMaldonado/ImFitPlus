@@ -36,7 +36,7 @@ class CalculoTmbActivity : AppCompatActivity() {
 
         val gastoCalorico = tmb * fator
 
-        binding.viewGasto.text = "$gastoCalorico"
+        binding.viewGasto.text = "%.2f".format(gastoCalorico)
 
         binding.btnPesoIdeal.setOnClickListener {
             val intent = Intent(this, PesoIdealActivity::class.java)

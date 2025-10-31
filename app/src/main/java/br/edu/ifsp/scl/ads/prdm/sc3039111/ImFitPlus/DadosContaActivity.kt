@@ -3,6 +3,7 @@ package br.edu.ifsp.scl.ads.prdm.sc3039111.ImFitPlus
 import android.content.Intent
 import android.os.Bundle
 import android.widget.RadioButton
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.edu.ifsp.scl.ads.prdm.sc3039111.ImFitPlus.databinding.DadosContaBinding
 
@@ -31,6 +32,7 @@ class DadosContaActivity : AppCompatActivity(){
             intent.putExtra("nome", insertNome)
             intent.putExtra("imc", imc)
             intent.putExtra("sexo", sexo)
+            intent.putExtra("idade", insertIdade)
             startActivity(intent)
         }
     }

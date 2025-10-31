@@ -18,7 +18,7 @@ class CalculoImcActivity : AppCompatActivity(){
         val imc = intent.getDoubleExtra("imc", 0.0)
 
         binding.viewNome.text = "$nome"
-        binding.viewImc.text = "$imc"
+        binding.viewImc.text = "%.2f".format(imc)
 
         val categoria = when {
             imc < 18.5 -> "Abaixo do peso"
