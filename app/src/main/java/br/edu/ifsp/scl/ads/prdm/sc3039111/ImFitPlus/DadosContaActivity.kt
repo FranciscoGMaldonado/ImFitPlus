@@ -19,12 +19,43 @@ class DadosContaActivity : AppCompatActivity(){
         binding.btnCalcular.setOnClickListener{
 
             val insertNome = binding.insertNome.text.toString()
-            val insertIdade = binding.insertIdade.text.toString().toIntOrNull()
-            val insertAltura = binding.insertAltura.text.toString().toDouble()
-            val insertPeso = binding.insertPeso.text.toString().toDouble()
+            val insertIdadeText = binding.insertIdade.text.toString()
+            val insertAlturaText = binding.insertAltura.text.toString()
+            val insertPesoText = binding.insertPeso.text.toString()
             val idSelecionado = binding.insertSexo.checkedRadioButtonId
+            val atividade = binding.insertAtividade.selectedItem.toString()
+
+            if (insertNome.isBlank()) {
+                Toast.makeText(this, "Informe o nome", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if (insertIdadeText.isBlank()) {
+                Toast.makeText(this, "Informe a idade", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if (insertAlturaText.isBlank()) {
+                Toast.makeText(this, "Informe a altura", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if (insertPesoText.isBlank()) {
+                Toast.makeText(this, "Informe o peso", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if (idSelecionado == -1) {
+                Toast.makeText(this, "Selecione o sexo", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val insertIdade = insertIdadeText.toIntOrNull()
+            val insertAltura = insertAlturaText.toDoubleOrNull()
+            val insertPeso = insertPesoText.toDoubleOrNull()
             val radioSelecionado = findViewById<RadioButton>(idSelecionado)
             val sexo = radioSelecionado.text.toString()
+
+            if (insertIdade == null || insertAltura == null || insertPeso == null) {
+                Toast.makeText(this, "Valores inválidos", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             val imc = insertPeso / (insertAltura * insertAltura)
 
@@ -35,6 +66,7 @@ class DadosContaActivity : AppCompatActivity(){
             intent.putExtra("idade", insertIdade)
             intent.putExtra("peso", insertPeso)
             intent.putExtra("altura", insertAltura)
+            intent.putExtra("atividade", atividade)
             startActivity(intent)
         }
     }
