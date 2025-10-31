@@ -29,7 +29,7 @@ class CalculoImcActivity : AppCompatActivity(){
         binding.viewCategoria.text = categoria
 
         binding.btnCalcularGasto.setOnClickListener {
-            val intent = Intent(CalculoTmbActivity::class.java)
+            val intent = Intent(this, CalculoTmbActivity::class.java)
             startActivity(intent)
         }
 
