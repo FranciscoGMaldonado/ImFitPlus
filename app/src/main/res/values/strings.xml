@@ -1,6 +1,32 @@
 <resources>
     <string name="app_name">ImFitPlus</string>
     <string name="voc_confirma_o_uso_dos_dados">Você Confirma O Uso dos Dados?</string>
+    <string name="boas_vindas">Boas Vindas!</string>
+    <string name="descubra_seu_perfil_de_sa_de_e_receba_recomenda_es_personalizadas">Descubra seu perfil de saúde e receba recomendações personalizadas.</string>
+    <string name="logo">Logo</string>
+    <string name="comece_aqui">Comece Aqui!</string>
+    <string name="imc">IMC</string>
+    <string name="mensagem">mensagem</string>
+    <string name="categoria">Categoria</string>
+    <string name="nome">Nome</string>
+    <string name="insira_os_dados_para_o_c_lculo">Insira os dados para o cálculo:</string>
+    <string name="nome_completo">Nome Completo</string>
+    <string name="idade">Idade</string>
+    <string name="masculino">Masculino</string>
+    <string name="feminino">Feminino</string>
+    <string name="altura">Altura</string>
+    <string name="peso">Peso</string>
+    <string name="calcular_imc">Calcular IMC</string>
+    <string name="voltar">Voltar</string>
+    <string name="diferen_a">Diferença</string>
+    <string name="c_lculo_do_peso_ideal">Cálculo do Peso Ideal</string>
+    <string name="peso_ideal">Peso ideal</string>
+    <string name="calcular_peso_ideal">Calcular Peso Ideal</string>
+    <string name="voltar_ao_imc">Voltar ao IMC</string>
+    <string name="gasto_cal_rico_di_rio">Gasto Calórico Diário</string>
+    <string name="gasto">Gasto</string>
+    <string name="calcular_gasto_cal_rico">Calcular Gasto Calórico</string>
+    <string name="voltar_ao_formul_rio">Voltar ao Formulário</string>
     <string-array name="niveis_atividade">
         <item>Sedentário</item>
         <item>Leve</item>

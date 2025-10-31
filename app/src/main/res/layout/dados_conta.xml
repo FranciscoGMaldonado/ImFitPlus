@@ -12,8 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:text="Insira os dados para o cálculo:"
-        android:textSize="20dp"
+        android:text="@string/insira_os_dados_para_o_c_lculo"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
         android:layout_width="268dp"
         android:layout_height="43dp"
         android:layout_marginTop="132dp"
-        android:hint="Nome"
+        android:hint="@string/nome_completo"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/insertDados"
         app:layout_constraintStart_toStartOf="@+id/insertDados"
@@ -35,7 +35,7 @@
         android:layout_width="268dp"
         android:layout_height="43dp"
         android:layout_marginTop="188dp"
-        android:hint="Idade"
+        android:hint="@string/idade"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="@+id/insertNome"
         app:layout_constraintHorizontal_bias="1.0"
@@ -57,13 +57,13 @@
             android:id="@+id/insertMasculino"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Masculino" />
+            android:text="@string/masculino" />
 
         <RadioButton
             android:id="@+id/insertFeminino"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Feminino" />
+            android:text="@string/feminino" />
 
     </RadioGroup>
 
@@ -72,7 +72,7 @@
         android:layout_width="268dp"
         android:layout_height="43dp"
         android:layout_marginTop="324dp"
-        android:hint="Altura"
+        android:hint="@string/altura"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="@+id/insertSexo"
         app:layout_constraintHorizontal_bias="0.474"
@@ -84,7 +84,7 @@
         android:layout_width="268dp"
         android:layout_height="43dp"
         android:layout_marginTop="384dp"
-        android:hint="Peso"
+        android:hint="@string/peso"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="@+id/insertAltura"
         app:layout_constraintStart_toStartOf="@+id/insertAltura"
@@ -117,7 +117,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="556dp"
-        android:text="Calcular IMC"
+        android:text="@string/calcular_imc"
         app:layout_constraintEnd_toEndOf="@+id/insertAtividade"
         app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="@+id/insertAtividade"
