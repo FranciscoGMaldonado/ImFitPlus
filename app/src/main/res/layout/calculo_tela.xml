@@ -11,38 +11,23 @@
         android:id="@+id/btnCalcularGasto"
         android:layout_width="150dp"
         android:layout_height="57dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="44dp"
         android:text="Calcular Gasto Calórico"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.816"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viewCategoria" />
-
-    <TextView
-        android:id="@+id/viewNome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:gravity="center"
-        android:text="Nome"
-        android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/viewCategoria" />
 
-    <TextView
-        android:id="@+id/viewCategoria"
+    <Button
+        android:id="@+id/btnVoltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:gravity="center"
-        android:text="Categoria"
-        android:textSize="18sp"
+        android:layout_marginTop="124dp"
+        android:text="Voltar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viewImc" />
+        app:layout_constraintTop_toBottomOf="@id/viewCategoria" />
 
     <TextView
         android:id="@+id/viewImc"
@@ -57,15 +42,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/viewNome" />
 
-    <Button
-        android:id="@+id/btnVoltar"
+    <TextView
+        android:id="@+id/viewCategoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="Voltar"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:text="Categoria"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.297"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viewCategoria" />
+        app:layout_constraintTop_toBottomOf="@id/viewImc" />
+
+    <TextView
+        android:id="@+id/viewNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="Nome"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
