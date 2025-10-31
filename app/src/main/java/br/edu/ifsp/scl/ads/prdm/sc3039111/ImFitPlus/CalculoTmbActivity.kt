@@ -40,6 +40,8 @@ class CalculoTmbActivity : AppCompatActivity() {
 
         binding.btnPesoIdeal.setOnClickListener {
             val intent = Intent(this, PesoIdealActivity::class.java)
+            intent.putExtra("peso", peso)
+            intent.putExtra("altura", altura)
             startActivity(intent)
         }
 

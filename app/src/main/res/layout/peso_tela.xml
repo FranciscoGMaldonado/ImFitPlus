@@ -7,50 +7,54 @@
     android:layout_height="match_parent"
     tools:context=".PesoIdealActivity">
 
+    <Button
+        android:id="@+id/btnVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Voltar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewDiferenca" />
+
+    <TextView
+        android:id="@+id/viewDiferenca"
+        android:layout_width="300dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:text="Diferença"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewPesoIdeal" />
+
     <TextView
         android:id="@+id/viewTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:gravity="center"
         android:text="Cálculo do Peso Ideal"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/viewPesoIdeal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="85dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="36dp"
+        android:gravity="center"
         android:text="Peso ideal"
         android:textSize="18sp"
-        android:layout_marginTop="32dp"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/viewTitulo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/viewDiferenca"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Diferença"
-        android:textSize="18sp"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/viewPesoIdeal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/btnVoltar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Voltar"
-        android:layout_marginTop="32dp"
-        app:layout_constraintTop_toBottomOf="@id/viewDiferenca"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/viewTitulo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

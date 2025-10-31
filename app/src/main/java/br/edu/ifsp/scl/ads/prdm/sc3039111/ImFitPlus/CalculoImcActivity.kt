@@ -16,6 +16,11 @@ class CalculoImcActivity : AppCompatActivity(){
 
         val nome = intent.getStringExtra("nome")
         val imc = intent.getDoubleExtra("imc", 0.0)
+        val peso = intent.getDoubleExtra("peso", 0.0)
+        val altura = intent.getDoubleExtra("altura", 0.0)
+        val idade = intent.getIntExtra("idade", 0)
+        val sexo = intent.getStringExtra("sexo") ?: "Masculino"
+        val atividade = intent.getStringExtra("atividade") ?: "Moderado"
 
         binding.viewNome.text = "$nome"
         binding.viewImc.text = "%.2f".format(imc)
@@ -30,6 +35,11 @@ class CalculoImcActivity : AppCompatActivity(){
 
         binding.btnCalcularGasto.setOnClickListener {
             val intent = Intent(this, CalculoTmbActivity::class.java)
+            intent.putExtra("sexo", sexo)
+            intent.putExtra("idade", idade)
+            intent.putExtra("peso", peso)
+            intent.putExtra("altura", altura)
+            intent.putExtra("atividade", atividade)
             startActivity(intent)
         }
 

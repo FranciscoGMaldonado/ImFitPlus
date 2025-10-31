@@ -33,6 +33,8 @@ class DadosContaActivity : AppCompatActivity(){
             intent.putExtra("imc", imc)
             intent.putExtra("sexo", sexo)
             intent.putExtra("idade", insertIdade)
+            intent.putExtra("peso", insertPeso)
+            intent.putExtra("altura", insertAltura)
             startActivity(intent)
         }
     }
