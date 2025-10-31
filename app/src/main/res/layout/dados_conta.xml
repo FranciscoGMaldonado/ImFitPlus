@@ -101,11 +101,22 @@
         app:layout_constraintStart_toStartOf="@+id/insertPeso"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <CheckBox
+        android:id="@+id/checkConfirma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="496dp"
+        android:text="@string/voc_confirma_o_uso_dos_dados"
+        app:layout_constraintEnd_toEndOf="@+id/insertAtividade"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="@+id/insertAtividade"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/btnCalcular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="504dp"
+        android:layout_marginTop="556dp"
         android:text="Calcular IMC"
         app:layout_constraintEnd_toEndOf="@+id/insertAtividade"
         app:layout_constraintHorizontal_bias="0.476"

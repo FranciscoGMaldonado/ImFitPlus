@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">ImFitPlus</string>
+    <string name="voc_confirma_o_uso_dos_dados">Você Confirma O Uso dos Dados?</string>
     <string-array name="niveis_atividade">
         <item>Sedentário</item>
         <item>Leve</item>

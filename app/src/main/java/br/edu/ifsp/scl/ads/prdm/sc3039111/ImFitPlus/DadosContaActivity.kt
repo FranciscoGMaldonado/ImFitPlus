@@ -24,6 +24,7 @@ class DadosContaActivity : AppCompatActivity(){
             val insertPesoText = binding.insertPeso.text.toString()
             val idSelecionado = binding.insertSexo.checkedRadioButtonId
             val atividade = binding.insertAtividade.selectedItem.toString()
+            val confirma = binding.checkConfirma.isChecked
 
             if (insertNome.isBlank()) {
                 Toast.makeText(this, "Informe o nome", Toast.LENGTH_SHORT).show()
@@ -43,6 +44,10 @@ class DadosContaActivity : AppCompatActivity(){
             }
             if (idSelecionado == -1) {
                 Toast.makeText(this, "Selecione o sexo", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if (!confirma){
+                Toast.makeText(this, "Confirme o uso de dados", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
