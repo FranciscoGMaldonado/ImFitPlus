@@ -14,6 +14,9 @@ class CalculoTmbActivity : AppCompatActivity() {
         binding = TmbTelaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val nome = intent.getStringExtra("nome")
+        val imc = intent.getDoubleExtra("imc", 0.0)
+        val categoria = intent.getStringExtra("categoria")
         val peso = intent.getDoubleExtra("peso", 0.0)
         val altura = intent.getDoubleExtra("altura", 0.0)
         val idade = intent.getIntExtra("idade", 0)
@@ -42,6 +45,10 @@ class CalculoTmbActivity : AppCompatActivity() {
             val intent = Intent(this, PesoIdealActivity::class.java)
             intent.putExtra("peso", peso)
             intent.putExtra("altura", altura)
+            intent.putExtra("gasto", gastoCalorico)
+            intent.putExtra("nome", nome)
+            intent.putExtra("categoria", categoria)
+            intent.putExtra("imc", imc)
             startActivity(intent)
         }
 

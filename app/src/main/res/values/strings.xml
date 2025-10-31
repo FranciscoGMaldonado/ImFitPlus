@@ -27,6 +27,10 @@
     <string name="gasto">Gasto</string>
     <string name="calcular_gasto_cal_rico">Calcular Gasto Calórico</string>
     <string name="voltar_ao_formul_rio">Voltar ao Formulário</string>
+    <string name="nomeresumo">nomeResumo</string>
+    <string name="pesoidealresumo">pesoIdealResumo</string>
+    <string name="consumo_agua">consumo agua</string>
+    <string name="resumo_da_s_ude">Resumo da Sáude</string>
     <string-array name="niveis_atividade">
         <item>Sedentário</item>
         <item>Leve</item>

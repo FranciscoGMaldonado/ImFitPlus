@@ -48,6 +48,9 @@ class CalculoImcActivity : AppCompatActivity(){
             intent.putExtra("peso", peso)
             intent.putExtra("altura", altura)
             intent.putExtra("atividade", atividade)
+            intent.putExtra("nome", nome)
+            intent.putExtra("categoria", categoria)
+            intent.putExtra("imc", imc)
             startActivity(intent)
         }
 
