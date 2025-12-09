@@ -5,7 +5,7 @@
     android:id="@+id/calculoImc"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CalculoImcActivity">
+    tools:context=".ui.CalculoImcActivity">
 
     <Button
         android:id="@+id/btnVoltar"

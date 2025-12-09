@@ -12,14 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ImFitPlus">
 
-        <activity android:name=".DadosContaActivity"/>
-        <activity android:name=".CalculoImcActivity"/>
-        <activity android:name=".CalculoTmbActivity"/>
-        <activity android:name=".PesoIdealActivity"/>
-        <activity android:name=".ResumoSaudeActivity"/>
+        <activity android:name=".ui.DadosContaActivity"/>
+        <activity android:name=".ui.CalculoImcActivity"/>
+        <activity android:name=".ui.CalculoTmbActivity"/>
+        <activity android:name=".ui.PesoIdealActivity"/>
+        <activity android:name=".ui.ResumoSaudeActivity"/>
 
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

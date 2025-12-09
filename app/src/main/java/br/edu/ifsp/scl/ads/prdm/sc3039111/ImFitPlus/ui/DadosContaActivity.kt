@@ -1,10 +1,11 @@
-package br.edu.ifsp.scl.ads.prdm.sc3039111.ImFitPlus
+package br.edu.ifsp.scl.ads.prdm.sc3039111.ImFitPlus.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import br.edu.ifsp.scl.ads.prdm.sc3039111.ImFitPlus.ui.CalculoImcActivity
 import br.edu.ifsp.scl.ads.prdm.sc3039111.ImFitPlus.databinding.DadosContaBinding
 
 class DadosContaActivity : AppCompatActivity(){

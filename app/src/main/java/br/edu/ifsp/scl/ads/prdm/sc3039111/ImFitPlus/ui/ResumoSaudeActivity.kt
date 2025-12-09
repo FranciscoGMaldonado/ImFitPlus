@@ -1,4 +1,4 @@
-package br.edu.ifsp.scl.ads.prdm.sc3039111.ImFitPlus
+package br.edu.ifsp.scl.ads.prdm.sc3039111.ImFitPlus.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
