@@ -8,11 +8,11 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 @Entity
 data class User(
-    @PrimaryKey(autoGenerate = true) var id: Int? = null,
-    var nome: String,
-    var idade: Int,
-    var sexo: String,
-    var altura: Double,
-    var peso: Double,
-    var atividade: String
+    @PrimaryKey(autoGenerate = true) var id: Int? = -1,
+    var nome: String = "",
+    var idade: Int = -1,
+    var sexo: String = "",
+    var altura: Double = -1.0,
+    var peso: Double = -1.0,
+    var atividade: String = ""
 ): Parcelable
