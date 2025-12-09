@@ -20,6 +20,7 @@ class ImfitSqlite(context: Context) : ImFitDao {
 
         val CREATE_USER_TABLE = "CREATE TABLE IF NOT EXISTS $USER_TABLE ( " +
                 "$ID_COLUMN INTEGER NOT NULL PRIMARY KEY, " +
+                "$COL_NOME TEXT," +
                 "$COL_IDADE INTEGER," +
                 "$COL_SEXO TEXT," +
                 "$COL_ALTURA REAL," +
