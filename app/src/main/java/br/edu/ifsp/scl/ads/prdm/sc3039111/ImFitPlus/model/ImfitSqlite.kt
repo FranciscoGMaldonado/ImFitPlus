@@ -43,7 +43,8 @@ class ImfitSqlite(context: Context) : ImFitDao {
                 "$HIS_CATEGORIA TEXT, " +
                 "$HIS_GASTO REAL, " +
                 "$HIS_PESO_IDEAL REAL, " +
-                "$HIS_AGUA TEXT); "
+                "$HIS_AGUA TEXT, " +
+                "FOREIGN KEY ($HIS_USER_ID) REFERENCES $USER_TABLE($ID_COLUMN));"
     }
 
     private val fitDb: SQLiteDatabase = context.openOrCreateDatabase(FIT_DB, Context.MODE_PRIVATE, null)
