@@ -43,7 +43,7 @@ class ImfitSqlite(context: Context) : ImFitDao {
                 "$HIS_CATEGORIA TEXT, " +
                 "$HIS_GASTO REAL, " +
                 "$HIS_PESO_IDEAL REAL, " +
-                "$HIS_AGUA TEXT, " +
+                "$HIS_AGUA DOUBLE, " +
                 "FOREIGN KEY ($HIS_USER_ID) REFERENCES $USER_TABLE($ID_COLUMN));"
     }
 
@@ -51,13 +51,14 @@ class ImfitSqlite(context: Context) : ImFitDao {
 
     init {
         fitDb.execSQL(CREATE_USER_TABLE)
+        fitDb.execSQL(CREATE_HISTORY_TABLE)
     }
 
     override fun insertUser(user: User) =
         fitDb.insert(USER_TABLE, null, user.toContentValues())
 
     override fun insertHistory(history: History): Long =
-        fitDb.insert(CREATE_HISTORY_TABLE, null, history.toContentValues())
+        fitDb.insert(HISTORY_TABLE, null, history.toContentValues())
 
     override fun getUserById(id: Int): User {
         val cursor = fitDb.query(
