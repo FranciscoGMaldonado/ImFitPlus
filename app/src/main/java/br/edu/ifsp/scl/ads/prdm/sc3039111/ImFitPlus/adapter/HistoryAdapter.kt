@@ -38,6 +38,6 @@ class HistoryAdapter(private val historyList: MutableList<History>) : RecyclerVi
         holder.categoriaTv.text = "Categoria: ${item.categoria}"
         holder.gastoTv.text = "Gasto: %.2f kcal".format(item.gasto)
         holder.pesoIdealTv.text = "Peso ideal: %.2f kg".format(item.pesoIdeal)
-        holder.aguaTv.text = "Água/dia: %.2f L".format(item.aguaConsumo)
+        holder.aguaTv.text = "Água/dia: %.2f ml".format(item.aguaConsumo)
     }
 }
