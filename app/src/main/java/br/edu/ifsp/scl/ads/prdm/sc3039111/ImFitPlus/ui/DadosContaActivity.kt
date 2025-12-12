@@ -5,8 +5,9 @@ import android.os.Bundle
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import br.edu.ifsp.scl.ads.prdm.sc3039111.ImFitPlus.ui.CalculoImcActivity
 import br.edu.ifsp.scl.ads.prdm.sc3039111.ImFitPlus.databinding.DadosContaBinding
+import br.edu.ifsp.scl.ads.prdm.sc3039111.ImFitPlus.model.ImfitSqlite
+import br.edu.ifsp.scl.ads.prdm.sc3039111.ImFitPlus.model.User
 
 class DadosContaActivity : AppCompatActivity(){
 
@@ -64,6 +65,17 @@ class DadosContaActivity : AppCompatActivity(){
             }
 
             val imc = insertPeso / (insertAltura * insertAltura)
+
+            val dao = ImfitSqlite(this)
+            val user = User(
+                nome = insertNome,
+                idade = insertIdadeText.toInt(),
+                sexo = sexo,
+                altura = insertAlturaText.toDouble(),
+                peso = insertPesoText.toDouble(),
+                atividade = atividade
+            )
+            dao.insertUser(user)
 
             val intent = Intent(this, CalculoImcActivity::class.java)
             intent.putExtra("nome", insertNome)
