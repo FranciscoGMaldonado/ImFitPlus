@@ -22,6 +22,7 @@ class CalculoTmbActivity : AppCompatActivity() {
         val idade = intent.getIntExtra("idade", 0)
         val atividade = intent.getStringExtra("atividade") ?: "Moderado"
         val sexo = intent.getStringExtra("sexo")
+        val userId = intent.getIntExtra("user", 0)
 
         val tmb = if(sexo == "Masculino") {
             66 + (13.7 * peso) + (5 * altura * 100) - (6.8 * idade)
@@ -49,6 +50,7 @@ class CalculoTmbActivity : AppCompatActivity() {
             intent.putExtra("nome", nome)
             intent.putExtra("categoria", categoria)
             intent.putExtra("imc", imc)
+            intent.putExtra("user", userId)
             startActivity(intent)
         }
 

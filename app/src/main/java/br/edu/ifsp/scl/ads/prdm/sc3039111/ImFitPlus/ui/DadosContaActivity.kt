@@ -67,15 +67,14 @@ class DadosContaActivity : AppCompatActivity(){
             val imc = insertPeso / (insertAltura * insertAltura)
 
             val dao = ImfitSqlite(this)
-            val user = User(
+            val user = dao.insertUser (User(
                 nome = insertNome,
                 idade = insertIdadeText.toInt(),
                 sexo = sexo,
                 altura = insertAlturaText.toDouble(),
                 peso = insertPesoText.toDouble(),
-                atividade = atividade
+                atividade = atividade)
             )
-            dao.insertUser(user)
 
             val intent = Intent(this, CalculoImcActivity::class.java)
             intent.putExtra("nome", insertNome)
@@ -85,6 +84,7 @@ class DadosContaActivity : AppCompatActivity(){
             intent.putExtra("peso", insertPeso)
             intent.putExtra("altura", insertAltura)
             intent.putExtra("atividade", atividade)
+            intent.putExtra("user", user.toInt())
             startActivity(intent)
         }
     }

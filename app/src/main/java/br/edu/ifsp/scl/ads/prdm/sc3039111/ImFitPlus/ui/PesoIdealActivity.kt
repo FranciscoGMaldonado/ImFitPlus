@@ -21,6 +21,7 @@ class PesoIdealActivity : AppCompatActivity(){
         val altura = intent.getDoubleExtra("altura", 0.0)
         val peso = intent.getDoubleExtra("peso", 0.0)
         val pesoIdeal = 22 * (altura * altura)
+        val userId = intent.getIntExtra("user", 0)
         val diferenca = if (pesoIdeal > peso){
             pesoIdeal - peso
         } else {
@@ -39,6 +40,7 @@ class PesoIdealActivity : AppCompatActivity(){
             intent.putExtra("nome", nome)
             intent.putExtra("categoria", categoria)
             intent.putExtra("imc", imc)
+            intent.putExtra("user", userId)
             startActivity(intent)
         }
 

@@ -21,6 +21,7 @@ class CalculoImcActivity : AppCompatActivity(){
         val idade = intent.getIntExtra("idade", 0)
         val sexo = intent.getStringExtra("sexo") ?: "Masculino"
         val atividade = intent.getStringExtra("atividade") ?: "Moderado"
+        val userId = intent.getIntExtra("user", 0)
 
         binding.viewNome.text = "$nome"
         binding.viewImc.text = "%.2f".format(imc)
@@ -51,6 +52,7 @@ class CalculoImcActivity : AppCompatActivity(){
             intent.putExtra("nome", nome)
             intent.putExtra("categoria", categoria)
             intent.putExtra("imc", imc)
+            intent.putExtra("user", userId)
             startActivity(intent)
         }
 
