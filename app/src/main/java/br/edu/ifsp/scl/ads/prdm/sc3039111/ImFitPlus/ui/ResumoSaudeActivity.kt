@@ -39,14 +39,14 @@ class ResumoSaudeActivity : AppCompatActivity() {
         db.insertHistory(history)
 
         binding.nomeResumo.text = nome
-        binding.imcResumo.text = "%.2f".format(imc)
-        binding.categoriaResumo.text = categoria
-        binding.pesoIdealResumo.text = "%.2f".format(pesoIdeal)
-        binding.gastoResumo.text = "%.2f".format(gasto)
-        binding.aguaResumo.text = "%.2f ml".format(ingestaoAgua)
+        binding.imcResumo.text = "IMC: %.2f".format(imc)
+        binding.categoriaResumo.text = "CATEGORIA: ${categoria}"
+        binding.pesoIdealResumo.text = "PESO IDEAL: %.2f kg".format(pesoIdeal)
+        binding.gastoResumo.text = "GASTO CALÓRICO: %.2f kcal".format(gasto)
+        binding.aguaResumo.text = "CONSUMO E ÁGUA IDEAL: %.2f ml".format(ingestaoAgua)
 
-        binding.btnHistorico.setOnClickListener{
-            val intent = Intent(this, HistoricoActivity::class.java)
+        binding.btnInicioResumo.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }
