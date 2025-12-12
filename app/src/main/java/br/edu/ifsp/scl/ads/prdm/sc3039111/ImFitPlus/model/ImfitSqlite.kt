@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
+import kotlin.collections.mutableListOf
 
 class ImfitSqlite(context: Context) : ImFitDao {
 
@@ -43,7 +44,7 @@ class ImfitSqlite(context: Context) : ImFitDao {
                 "$HIS_CATEGORIA TEXT, " +
                 "$HIS_GASTO REAL, " +
                 "$HIS_PESO_IDEAL REAL, " +
-                "$HIS_AGUA DOUBLE, " +
+                "$HIS_AGUA REAL, " +
                 "FOREIGN KEY ($HIS_USER_ID) REFERENCES $USER_TABLE($ID_COLUMN));"
     }
 
@@ -83,7 +84,7 @@ class ImfitSqlite(context: Context) : ImFitDao {
         val cursor = fitDb.query(
             HISTORY_TABLE,
             null,
-            "$ID_COLUMN = ?",
+            "$$HIS_ID = ?",
             arrayOf(id.toString()),
             null,
             null,
@@ -96,6 +97,37 @@ class ImfitSqlite(context: Context) : ImFitDao {
         else {
             History()
         }
+    }
+
+    override fun getAllHistory(): List<History> {
+        val list = mutableListOf<History>()
+        val cursor = fitDb.query(
+            HISTORY_TABLE,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "id DESC"
+        )
+
+        if (cursor.moveToFirst()) {
+            do {
+                val item = History(
+                    id = cursor.getInt(cursor.getColumnIndexOrThrow(HIS_ID)),
+                    userId = cursor.getInt(cursor.getColumnIndexOrThrow(HIS_USER_ID)),
+                    imc = cursor.getDouble(cursor.getColumnIndexOrThrow(HIS_IMC)),
+                    categoria = cursor.getString(cursor.getColumnIndexOrThrow(HIS_CATEGORIA)),
+                    gasto = cursor.getDouble(cursor.getColumnIndexOrThrow(HIS_GASTO)),
+                    pesoIdeal = cursor.getDouble(cursor.getColumnIndexOrThrow(HIS_PESO_IDEAL)),
+                    aguaConsumo = cursor.getDouble(cursor.getColumnIndexOrThrow(HIS_AGUA))
+                )
+                list.add(item)
+            } while (cursor.moveToNext())
+        }
+
+        cursor.close()
+        return list
     }
 
     private fun User.toContentValues() = ContentValues().apply {
