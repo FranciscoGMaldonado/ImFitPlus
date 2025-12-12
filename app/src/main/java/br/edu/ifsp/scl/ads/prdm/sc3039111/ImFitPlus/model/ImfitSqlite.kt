@@ -84,7 +84,7 @@ class ImfitSqlite(context: Context) : ImFitDao {
         val cursor = fitDb.query(
             HISTORY_TABLE,
             null,
-            "$$HIS_ID = ?",
+            "$HIS_ID = ?",
             arrayOf(id.toString()),
             null,
             null,
