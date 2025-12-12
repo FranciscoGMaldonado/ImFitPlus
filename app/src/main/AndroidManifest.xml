@@ -17,6 +17,7 @@
         <activity android:name=".ui.CalculoTmbActivity"/>
         <activity android:name=".ui.PesoIdealActivity"/>
         <activity android:name=".ui.ResumoSaudeActivity"/>
+        <activity android:name=".ui.HistoricoActivity"/>
 
         <activity
             android:name=".ui.MainActivity"
