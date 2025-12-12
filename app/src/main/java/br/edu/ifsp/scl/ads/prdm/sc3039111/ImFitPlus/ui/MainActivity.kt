@@ -19,5 +19,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, DadosContaActivity::class.java)
             startActivity(intent)
         }
+
+        binding.btnHistorico.setOnClickListener{
+            val intent = Intent(this, HistoricoActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
