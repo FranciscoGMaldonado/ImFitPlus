@@ -46,6 +46,7 @@ class CalculoTmbActivity : AppCompatActivity() {
             val intent = Intent(this, PesoIdealActivity::class.java)
             intent.putExtra("peso", peso)
             intent.putExtra("altura", altura)
+            intent.putExtra("idade", idade)
             intent.putExtra("gasto", gastoCalorico)
             intent.putExtra("nome", nome)
             intent.putExtra("categoria", categoria)

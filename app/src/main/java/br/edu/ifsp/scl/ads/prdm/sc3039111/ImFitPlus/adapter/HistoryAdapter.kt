@@ -16,6 +16,7 @@ class HistoryAdapter(private val historyList: MutableList<History>) : RecyclerVi
             val gastoTv = binding.gastoTv
             val pesoIdealTv = binding.pesoIdealTv
             val aguaTv = binding.aguaTv
+            val frequenciaTv = binding.frequenciaTv
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistoryViewHolder {
@@ -39,5 +40,6 @@ class HistoryAdapter(private val historyList: MutableList<History>) : RecyclerVi
         holder.gastoTv.text = "Gasto: %.2f kcal".format(item.gasto)
         holder.pesoIdealTv.text = "Peso ideal: %.2f kg".format(item.pesoIdeal)
         holder.aguaTv.text = "Água/dia: %.2f ml".format(item.aguaConsumo)
+        holder.frequenciaTv.text = "Freqeuncia: ${item.frequencia}"
     }
 }

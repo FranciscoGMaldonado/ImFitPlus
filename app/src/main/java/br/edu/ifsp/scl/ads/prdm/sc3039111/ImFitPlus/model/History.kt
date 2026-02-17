@@ -11,5 +11,6 @@ data class History(
     val categoria: String = "",
     val gasto: Double = -1.0,
     val pesoIdeal: Double = -1.0,
-    var aguaConsumo: Double = -1.0
+    var aguaConsumo: Double = -1.0,
+    var frequencia: Int = -1
 ): Parcelable

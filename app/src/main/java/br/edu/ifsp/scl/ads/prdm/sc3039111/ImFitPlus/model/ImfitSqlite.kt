@@ -14,6 +14,7 @@ class ImfitSqlite(context: Context) : ImFitDao {
         private val ID_COLUMN = "id"
         private val COL_NOME = "nome"
         private val COL_IDADE = "idade"
+        private val COL_DATA_NASC = "dataNasc"
         private val COL_SEXO = "sexo"
         private val COL_ALTURA = "altura"
         private val COL_PESO = "peso"
@@ -27,11 +28,13 @@ class ImfitSqlite(context: Context) : ImFitDao {
         private val HIS_GASTO = "gasto"
         private val HIS_PESO_IDEAL = "pesoIdeal"
         private val HIS_AGUA = "aguaConsumo"
+        private val HIS_FREQUENCIA = "frequencia"
 
         val CREATE_USER_TABLE = "CREATE TABLE IF NOT EXISTS $USER_TABLE ( " +
                 "$ID_COLUMN INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, " +
                 "$COL_NOME TEXT," +
                 "$COL_IDADE INTEGER," +
+                "$COL_DATA_NASC TEXT," +
                 "$COL_SEXO TEXT," +
                 "$COL_ALTURA REAL," +
                 "$COL_PESO REAL," +
@@ -45,6 +48,7 @@ class ImfitSqlite(context: Context) : ImFitDao {
                 "$HIS_GASTO REAL, " +
                 "$HIS_PESO_IDEAL REAL, " +
                 "$HIS_AGUA REAL, " +
+                "$HIS_FREQUENCIA INTEGER, " +
                 "FOREIGN KEY ($HIS_USER_ID) REFERENCES $USER_TABLE($ID_COLUMN));"
     }
 
@@ -120,7 +124,8 @@ class ImfitSqlite(context: Context) : ImFitDao {
                     categoria = cursor.getString(cursor.getColumnIndexOrThrow(HIS_CATEGORIA)),
                     gasto = cursor.getDouble(cursor.getColumnIndexOrThrow(HIS_GASTO)),
                     pesoIdeal = cursor.getDouble(cursor.getColumnIndexOrThrow(HIS_PESO_IDEAL)),
-                    aguaConsumo = cursor.getDouble(cursor.getColumnIndexOrThrow(HIS_AGUA))
+                    aguaConsumo = cursor.getDouble(cursor.getColumnIndexOrThrow(HIS_AGUA)),
+                    frequencia = cursor.getInt(cursor.getColumnIndexOrThrow(HIS_FREQUENCIA))
                 )
                 list.add(item)
             } while (cursor.moveToNext())
@@ -134,6 +139,7 @@ class ImfitSqlite(context: Context) : ImFitDao {
         put(COL_NOME, nome)
         put(COL_IDADE, idade)
         put(COL_SEXO, sexo)
+        put(COL_DATA_NASC, dataNasc)
         put(COL_ALTURA, altura)
         put(COL_PESO, peso)
         put(COL_ATIVIDADE, atividade)
@@ -145,11 +151,13 @@ class ImfitSqlite(context: Context) : ImFitDao {
         put(HIS_GASTO, gasto)
         put(HIS_PESO_IDEAL, pesoIdeal)
         put(HIS_AGUA, aguaConsumo)
+        put(HIS_FREQUENCIA, frequencia)
     }
     private fun Cursor.toUser() = User(
         getInt(getColumnIndexOrThrow(ID_COLUMN)),
         getString(getColumnIndexOrThrow(COL_NOME)),
         getInt(getColumnIndexOrThrow(COL_IDADE)),
+        getString(getColumnIndexOrThrow(COL_DATA_NASC)),
         getString(getColumnIndexOrThrow(COL_SEXO)),
         getDouble(getColumnIndexOrThrow(COL_ALTURA)),
         getDouble(getColumnIndexOrThrow(COL_PESO)),
@@ -163,6 +171,7 @@ class ImfitSqlite(context: Context) : ImFitDao {
         getString(getColumnIndexOrThrow(HIS_CATEGORIA)),
         getDouble(getColumnIndexOrThrow(HIS_GASTO)),
         getDouble(getColumnIndexOrThrow(HIS_PESO_IDEAL)),
-        getDouble(getColumnIndexOrThrow(HIS_AGUA))
+        getDouble(getColumnIndexOrThrow(HIS_AGUA)),
+        getInt(getColumnIndexOrThrow(HIS_FREQUENCIA))
     )
 }

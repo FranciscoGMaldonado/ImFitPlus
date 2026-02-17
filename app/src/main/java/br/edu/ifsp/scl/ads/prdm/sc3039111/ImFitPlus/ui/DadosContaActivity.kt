@@ -8,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import br.edu.ifsp.scl.ads.prdm.sc3039111.ImFitPlus.databinding.DadosContaBinding
 import br.edu.ifsp.scl.ads.prdm.sc3039111.ImFitPlus.model.ImfitSqlite
 import br.edu.ifsp.scl.ads.prdm.sc3039111.ImFitPlus.model.User
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.Period
 
 class DadosContaActivity : AppCompatActivity(){
 
@@ -21,7 +24,7 @@ class DadosContaActivity : AppCompatActivity(){
         binding.btnCalcular.setOnClickListener{
 
             val insertNome = binding.insertNome.text.toString()
-            val insertIdadeText = binding.insertIdade.text.toString()
+            val insertNascText = binding.insertIdade.text.toString()
             val insertAlturaText = binding.insertAltura.text.toString()
             val insertPesoText = binding.insertPeso.text.toString()
             val idSelecionado = binding.insertSexo.checkedRadioButtonId
@@ -32,7 +35,7 @@ class DadosContaActivity : AppCompatActivity(){
                 Toast.makeText(this, "Informe o nome", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            if (insertIdadeText.isBlank()) {
+            if (insertNascText.isBlank()) {
                 Toast.makeText(this, "Informe a idade", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -48,12 +51,16 @@ class DadosContaActivity : AppCompatActivity(){
                 Toast.makeText(this, "Selecione o sexo", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            if (!confirma){
+            if (!confirma) {
                 Toast.makeText(this, "Confirme o uso de dados", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            val insertIdade = insertIdadeText.toIntOrNull()
+            val data = LocalDate.parse(insertNascText)
+            val year = data.year
+            val month = data.month
+            val day = data.dayOfMonth
+            val insertIdade = calculateAge(LocalDate.of(year, month, day))
             val insertAltura = insertAlturaText.toDoubleOrNull()
             val insertPeso = insertPesoText.toDoubleOrNull()
             val radioSelecionado = findViewById<RadioButton>(idSelecionado)
@@ -69,7 +76,8 @@ class DadosContaActivity : AppCompatActivity(){
             val dao = ImfitSqlite(this)
             val user = dao.insertUser (User(
                 nome = insertNome,
-                idade = insertIdadeText.toInt(),
+                idade = insertIdade,
+                dataNasc = data.toString(),
                 sexo = sexo,
                 altura = insertAlturaText.toDouble(),
                 peso = insertPesoText.toDouble(),
@@ -81,11 +89,17 @@ class DadosContaActivity : AppCompatActivity(){
             intent.putExtra("imc", imc)
             intent.putExtra("sexo", sexo)
             intent.putExtra("idade", insertIdade)
+            intent.putExtra("dataNasc", insertNascText)
             intent.putExtra("peso", insertPeso)
             intent.putExtra("altura", insertAltura)
             intent.putExtra("atividade", atividade)
             intent.putExtra("user", user.toInt())
             startActivity(intent)
         }
+    }
+
+    fun calculateAge(birthDate: LocalDate): Int {
+        val currentDate = LocalDate.now()
+        return Period.between(birthDate, currentDate).years
     }
 }

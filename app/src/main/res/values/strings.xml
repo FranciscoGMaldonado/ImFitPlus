@@ -32,6 +32,7 @@
     <string name="consumo_agua">consumo agua</string>
     <string name="resumo_da_s_ude">Resumo da Sáude</string>
     <string name="resumo_de_sa_de">Resumo de Saúde</string>
+    <string name="data_nascimento">Data Nascimento</string>
     <string-array name="niveis_atividade">
         <item>Sedentário</item>
         <item>Leve</item>

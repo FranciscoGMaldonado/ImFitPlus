@@ -21,10 +21,18 @@ class ResumoSaudeActivity : AppCompatActivity() {
         val categoria = intent.getStringExtra("categoria")
         val gasto = intent.getDoubleExtra("gasto", 0.0)
         val pesoIdeal = intent.getDoubleExtra("pesoIdeal", 0.0)
+        val idade = intent.getIntExtra("idade", 0)
         val peso = intent.getDoubleExtra("peso", 0.0)
         val userId = intent.getIntExtra("user", 0)
 
         val ingestaoAgua = 0.35 * peso
+        val frequencia = 220 - idade
+
+        val zona50 = frequencia * 0.50
+        val zona60 = frequencia * 0.60
+        val zona70 = frequencia * 0.70
+        val zona80 = frequencia * 0.80
+        val zona90 = frequencia * 0.90
 
         val db = ImfitSqlite(this)
 
@@ -34,7 +42,8 @@ class ResumoSaudeActivity : AppCompatActivity() {
             categoria = categoria ?: "",
             gasto = gasto,
             pesoIdeal = pesoIdeal,
-            aguaConsumo = ingestaoAgua
+            aguaConsumo = ingestaoAgua,
+            frequencia = frequencia
         )
         db.insertHistory(history)
 
@@ -44,6 +53,11 @@ class ResumoSaudeActivity : AppCompatActivity() {
         binding.pesoIdealResumo.text = "PESO IDEAL: %.2f kg".format(pesoIdeal)
         binding.gastoResumo.text = "GASTO CALÓRICO: %.2f kcal".format(gasto)
         binding.aguaResumo.text = "CONSUMO E ÁGUA IDEAL: %.2f ml".format(ingestaoAgua)
+        binding.frequenciaResumo.text = "FREQUÊNCIA CARDÍACA MÁXIMA: ${frequencia}"
+        binding.zonaLeve.text = "ZONA LEVE: ${zona50} - ${zona60}"
+        binding.zonaQueima.text = "ZONA QUEIMA DE GORDURA: ${zona60} - ${zona70}"
+        binding.zonaAero.text = "ZONA AERÓBICA: ${zona70} - ${zona80}"
+        binding.zonaAnae.text = "ZONA ANAERÓBICA: ${zona80} - ${zona90}"
 
         binding.btnInicioResumo.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
